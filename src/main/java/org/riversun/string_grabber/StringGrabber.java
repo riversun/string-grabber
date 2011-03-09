@@ -171,11 +171,13 @@ public class StringGrabber {
 	public StringGrabber removeHeadConsecutiveChars(char charToRemove) {
 		boolean loop = true;
 
-		while (loop) {
-			if (sb.charAt(0) == charToRemove) {
-				removeHead(1);
-			} else {
-				loop = false;
+		if (sb.length() > 0) {
+			while (loop) {
+				if (sb.charAt(0) == charToRemove) {
+					removeHead(1);
+				} else {
+					loop = false;
+				}
 			}
 		}
 		return StringGrabber.this;
@@ -189,11 +191,13 @@ public class StringGrabber {
 	public StringGrabber removeTailConsecutiveChars(char charToRemove) {
 		boolean loop = true;
 
-		while (loop) {
-			if (sb.charAt(sb.length() - 1) == charToRemove) {
-				removeTail(1);
-			} else {
-				loop = false;
+		if (sb.length() > 0) {
+			while (loop) {
+				if (sb.charAt(sb.length() - 1) == charToRemove) {
+					removeTail(1);
+				} else {
+					loop = false;
+				}
 			}
 		}
 		return StringGrabber.this;
