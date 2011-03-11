@@ -138,7 +138,11 @@ public class StringGrabber {
      * @return
      */
     public StringGrabber removeHead(int cnt) {
-        sb.delete(0, cnt);
+        try {
+            sb.delete(0, cnt);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return StringGrabber.this;
     }
 
@@ -152,7 +156,10 @@ public class StringGrabber {
      */
     public StringGrabber removeTail(int cnt) {
         int leng = sb.length();
-        sb.delete(leng - cnt, leng);
+        try {
+            sb.delete(leng - cnt, leng);
+        } catch (Exception e) {
+        }
         return StringGrabber.this;
     }
 
@@ -246,7 +253,13 @@ public class StringGrabber {
      */
     public StringGrabber insertIntoHead(String str) {
 
-        sb.insert(0, str);
+        if (str != null) {
+            try {
+                sb.insert(0, str);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
         return StringGrabber.this;
     }
@@ -264,8 +277,12 @@ public class StringGrabber {
 
         StringBuilder sbRange = new StringBuilder();
 
-        for (int i = startPos; i < endPos; i++) {
-            sbRange.append(String.valueOf(sb.charAt(i)));
+        try {
+            for (int i = startPos; i < endPos; i++) {
+                sbRange.append(String.valueOf(sb.charAt(i)));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         final String caseConvertedRangeStr;
@@ -275,9 +292,11 @@ public class StringGrabber {
         } else {
             caseConvertedRangeStr = sbRange.toString().toUpperCase();
         }
-
-        sb.replace(startPos, endPos, caseConvertedRangeStr);
-
+        try {
+            sb.replace(startPos, endPos, caseConvertedRangeStr);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return StringGrabber.this;
     }
 
@@ -498,7 +517,9 @@ public class StringGrabber {
      */
     public StringGrabber appendRepeat(String str, int repeatCount) {
         for (int i = 0; i < repeatCount; i++) {
-            sb.append(str);
+            if (str != null) {
+                sb.append(str);
+            }
         }
         return StringGrabber.this;
     }
