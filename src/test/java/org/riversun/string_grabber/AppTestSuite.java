@@ -10,7 +10,7 @@ import org.junit.runners.Suite;
  * @author Tom Misawa (riversun.org@gmail.com)
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ TestStringGrabber.class,TestStringCropper.class ,TestStringGrabberList.class})
+@Suite.SuiteClasses({ TestStringCropper.class,TestStringGrabber.class,TestStringCropper.class ,TestStringGrabberList.class})
 public class AppTestSuite {
 
 }
