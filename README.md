@@ -1,6 +1,8 @@
 # Overview
 'string-grabber' is a java library for manipulating and editing String object easily and quickly.
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.riversun/string-grabber/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.riversun/string-grabber)
+
 It is licensed under [MIT License](http://opensource.org/licenses/MIT).
 
 
